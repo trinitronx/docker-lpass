@@ -1,0 +1,6 @@
+#!/bin/bash
+echo -n "$*: " >/dev/null
+stty -echo
+read answer
+stty echo
+echo $answer

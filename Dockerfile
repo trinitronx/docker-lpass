@@ -20,6 +20,7 @@ RUN set -x                                                               && \
     cd / && rm -rf /lastpass-cli-${VER}
 
 ADD bin/bash-askpass /usr/local/bin/bash-askpass
+ADD bin/quiet-askpass /usr/local/bin/quiet-askpass
 
 VOLUME /root/.lpass
 

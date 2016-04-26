@@ -19,6 +19,9 @@ RUN set -x                                                               && \
     make && make install                                                 && \
     cd / && rm -rf /lastpass-cli-${VER}
 
+ADD bin/bash-askpass /usr/local/bin/bash-askpass
+ADD bin/quiet-askpass /usr/local/bin/quiet-askpass
+
 VOLUME /root/.lpass
 
 ENTRYPOINT ["/usr/bin/lpass"]

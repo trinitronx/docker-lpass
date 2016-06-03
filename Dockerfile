@@ -9,6 +9,8 @@ RUN set -x                                                             && \
                        libxml2-dev pinentry-curses curl make unzip     && \
     apt-get clean
 
+RUN apt-get install -y gettext-base
+
 ENV VER 0.8.1
 
 RUN set -x                                                               && \

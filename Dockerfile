@@ -9,7 +9,7 @@ RUN set -x                                                             && \
                        libxml2-dev pinentry-curses curl make unzip     && \
     apt-get clean
 
-RUN apt-get install -y gettext-base
+RUN apt-get install -y gettext-base gawk
 
 ENV VER 0.8.1
 

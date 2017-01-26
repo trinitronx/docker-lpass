@@ -11,14 +11,14 @@ RUN set -x                                                             && \
 
 RUN apt-get install -y gettext-base gawk
 
-ENV VER 0.8.1
+ENV VER 1.0.0
 
-RUN set -x                                                               && \
-    curl -OL https://github.com/lastpass/lastpass-cli/archive/${VER}.zip && \
-    echo bdc9f7526525a359d23d75d7afe5db77 ${VER}.zip | md5sum -c -       && \
-    unzip ${VER}.zip && rm ${VER}.zip                                    && \
-    cd lastpass-cli-${VER}                                               && \
-    make && make install                                                 && \
+RUN set -x                                                                && \
+    curl -OL https://github.com/lastpass/lastpass-cli/archive/v${VER}.zip && \
+    echo 2f68a6835eecea738cd6a141881c9f8f v${VER}.zip | md5sum -c -       && \
+    unzip v${VER}.zip && rm v${VER}.zip                                   && \
+    cd lastpass-cli-${VER}                                                && \
+    make && make install                                                  && \
     cd / && rm -rf /lastpass-cli-${VER}
 
 ADD bin/bash-askpass /usr/local/bin/bash-askpass
